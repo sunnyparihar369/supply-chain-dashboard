@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Design tokens — a restrained, corporate palette for an FMCG supply-chain
+   audience. Status hues (validated for contrast + colorblind safety) are the
+   only saturated colors; everything structural is neutral ink on off-white.
+   ───────────────────────────────────────────────────────────────────────── */
+@theme inline {
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --color-plane: #f4f4f1; /* page background */
+  --color-surface: #ffffff; /* cards, table */
+  --color-surface-2: #fbfbfa; /* subtle inset panels */
+  --color-ink: #14130f; /* primary text */
+  --color-ink-2: #52514e; /* secondary text */
+  --color-muted: #8a8880; /* labels, axis, meta */
+  --color-hairline: #e5e4de; /* borders */
+  --color-hairline-strong: #d6d5cd;
+  --color-accent: #1f6fd6; /* interactive / brand accent */
+  --color-accent-ink: #0f4f9e;
+
+  /* Status palette (fixed — never themed). Paired with icon + label in UI. */
+  --color-critical: #d03b3b;
+  --color-warning: #e0961b;
+  --color-good: #0ca30c;
+}
+
+:root {
+  color-scheme: light;
+  --shadow-card: 0 1px 2px rgba(20, 19, 15, 0.04), 0 1px 3px rgba(20, 19, 15, 0.06);
+  --shadow-pop: 0 4px 12px rgba(20, 19, 15, 0.08), 0 2px 4px rgba(20, 19, 15, 0.05);
+}
+
+body {
+  background: var(--color-plane);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Columns of figures align on the decimal; large standalone numbers do not. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  animation: riseIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes growBar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Focus ring consistent with the accent, for keyboard users. */
+:where(button, [role="button"], input, a):focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
+}

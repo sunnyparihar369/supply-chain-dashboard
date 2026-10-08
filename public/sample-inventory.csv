@@ -1,0 +1,16 @@
+sku,current_stock,avg_daily_demand,max_daily_demand,lead_time_days,unit_cost
+500ml PET Bottle,12000,800,1400,7,8
+Aluminum Can 330ml,4500,600,1100,10,6
+Corrugated Carton - Large,300,45,90,14,120
+Glass Bottle 650ml,8000,300,500,12,15
+Crown Cap - Standard,25000,2000,3200,5,1
+Six-Pack Carrier,1800,150,280,9,10
+Label Roll - Brand A,600,80,150,15,45
+Shrink Wrap Film,220,30,60,20,200
+Plastic Crate,950,60,110,18,180
+Pallet - Wood Standard,140,10,25,21,650
+Bottle Cap - Aluminum,18000,1500,2600,6,2
+Secondary Packaging Box,700,90,160,11,55
+CO2 Cylinder,85,8,20,25,1200
+Cleaning Chemical - Line A,300,25,55,14,90
+Syrup Concentrate - Flavor X,450,40,75,16,300
